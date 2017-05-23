@@ -1,5 +1,6 @@
 package lhq.money.chbtc;
 
+import com.alibaba.fastjson.JSON;
 import lhq.money.chbtc.buss.ChbtcMarketBuss;
 import lhq.money.chbtc.vo.Ticker;
 import lhq.money.enu.CurrencyEnum;
@@ -11,10 +12,11 @@ public class MarketTest {
 
     public static void main(String[] args) {
         ChbtcMarketBuss market = new ChbtcMarketBuss();
-        Ticker ticker = market.getTicker(CurrencyEnum.eth_cny);
+        getTicker(market);
     }
 
-    private void getTicker(ChbtcMarketBuss market) {
-
+    private static void getTicker(ChbtcMarketBuss market) {
+        Ticker ticker = market.getTicker(CurrencyEnum.eth_cny);
+        System.out.println(JSON.toJSONString(ticker));
     }
 }

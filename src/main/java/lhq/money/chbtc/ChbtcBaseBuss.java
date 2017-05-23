@@ -17,7 +17,7 @@ public class ChbtcBaseBuss {
         }
         String secret = CnbtcSign.digest(ChbtcConstant.SECRET_KEY);
         String sign = CnbtcSign.hmacSign(params, secret);
-        String url = String.format("%s?%s&sign=%s&reqTime=%s", ChbtcConstant.BASE_PATH + path, params, sign,
+        String url = String.format("%s?%s&sign=%s&reqTime=%s", ChbtcConstant.BASE_PATH_SECRET + path, params, sign,
                 System.currentTimeMillis());
         HttpResponse resp = HttpUtils.get(url);
         LogUtils.debug(String.format("%s, %s, %s", resp.getCode(), url, resp.getContent()));

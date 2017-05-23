@@ -7,6 +7,8 @@ import lhq.money.chbtc.ChbtcConstant;
 import lhq.money.chbtc.vo.Ticker;
 import lhq.money.enu.CurrencyEnum;
 
+import java.util.Map;
+
 /**
  * Created by huaqiang.liu on 2017/5/23.
  */
@@ -19,7 +21,7 @@ public class ChbtcMarketBuss extends ChbtcBaseBuss implements IMarket {
         if (result == null) {
             return null;
         }
-        return JSON.parseObject(result, Ticker.class);
+        return JSON.parseObject(result).getObject("ticker", Ticker.class);
     }
 
     @Override
