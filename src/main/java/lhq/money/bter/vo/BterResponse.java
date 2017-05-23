@@ -1,4 +1,4 @@
-package lhq.money.bter;
+package lhq.money.bter.vo;
 
 /**
  * Created by huaqiang.liu on 2017/5/22.

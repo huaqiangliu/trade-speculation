@@ -1,7 +1,5 @@
 package lhq.money.enu;
 
 public enum CurrencyEnum {
-
-	ETH, ETC, CNY;
-
+	eth_cny;
 }
